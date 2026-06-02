@@ -683,7 +683,7 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
   <p style="margin-top:0.5rem;">© 2026 夏合宿inにしあわくら. All rights reserved.</p>
 </footer>
 
-<script>
+<script is:inline>
 function switchDay(day){document.querySelectorAll('.day-tab').forEach((t,i)=>t.classList.toggle('active',i+1===day));document.querySelectorAll('.day-content').forEach((c,i)=>c.classList.toggle('active',i+1===day));}
 function toggleFAQ(el){el.parentElement.classList.toggle('open');}
 function toggleMenu(btn){btn.classList.toggle('open');document.getElementById('nav-mobile').classList.toggle('open');btn.setAttribute('aria-label',btn.classList.contains('open')?'メニューを閉じる':'メニューを開く');}
