@@ -273,7 +273,10 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
 <!-- ① ヒーロー写真（全幅） -->
 <section id="hero">
   <div class="hero-bg">
-    <img src="/images/summercamp2026/photo01.jpg" alt="夏合宿inにしあわくら">
+    <picture>
+      <source media="(max-width: 768px)" srcset="/images/summercamp2026/photo01_mb.jpg">
+      <img src="/images/summercamp2026/photo01_pc.jpg" alt="夏合宿inにしあわくら">
+    </picture>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-text fade-in">
