@@ -184,15 +184,60 @@ section{padding:6rem 0}
 footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;padding:2rem;font-size:0.78rem}
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
 .fade-in.visible{opacity:1;transform:translateY(0)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:101}
+.nav-hamburger span{display:block;width:24px;height:2px;background:var(--gd);border-radius:2px;transition:all 0.3s}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-mobile{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(250,247,242,0.98);backdrop-filter:blur(8px);border-bottom:1px solid rgba(45,106,79,0.15);padding:0.5rem 1.5rem 1.2rem;z-index:99;flex-direction:column}
+.nav-mobile.open{display:flex}
+.nav-mobile a{display:block;padding:0.85rem 0;font-size:0.95rem;color:var(--tm);text-decoration:none;border-bottom:1px solid rgba(45,106,79,0.08);letter-spacing:0.03em}
+.nav-mobile .nav-cta{background:var(--gm)!important;color:var(--w)!important;text-align:center;border-radius:50px;margin-top:0.8rem;border-bottom:none!important;padding:0.75rem;font-weight:700}
+@media(max-width:1024px){
+  .hero-text{padding:3rem 3rem}
+  .hero-title{font-size:2.6rem}
+  .day-layout{gap:2rem}
+  .gallery-mosaic{grid-template-columns:repeat(3,1fr)}
+  .g-tall{height:340px}
+  .growth-with-photo,.safety-with-photo{gap:2rem}
+}
 @media(max-width:768px){
-  .hero-title{font-size:2rem}.hero-text{padding:3rem 1.5rem}
+  nav{padding:0 1rem}
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .hero-title{font-size:1.9rem}
+  .hero-text{padding:2rem 1.2rem 2.5rem}
+  .hero-meta-row{gap:0.75rem}
+  .hero-meta-item{font-size:0.8rem}
+  .hero-buttons{flex-direction:column;gap:0.6rem}
+  .btn-primary,.btn-ghost{justify-content:center;padding:0.8rem 1.5rem;font-size:0.9rem}
+  .hero-seats{display:none}
   .photo-band{grid-template-columns:1fr;height:auto}
   .photo-band-item{height:200px}
+  section{padding:4rem 0}
+  .section-title{font-size:1.5rem;margin-bottom:2rem}
+  .worries-grid{grid-template-columns:1fr 1fr}
   .why-grid,.staff-grid,.testimonials-grid,.growth-with-photo,.safety-with-photo{grid-template-columns:1fr}
   .day-layout{grid-template-columns:1fr}
+  .days-tabs{width:100%}
+  .day-tab{flex:1;text-align:center;padding:0.6rem 0.5rem}
   .gallery-mosaic{grid-template-columns:repeat(2,1fr)}
-  .g-tall{grid-row:span 1;height:200px !important}
-  nav{padding:0 1rem}.nav-links{display:none}
+  .g-tall{grid-row:span 1;height:200px!important}
+  .g-wide{grid-column:span 2;height:200px}
+  .overview-table th{width:100px;font-size:0.82rem;padding-right:0.5rem}
+  .overview-table td{font-size:0.82rem}
+  .cta-title{font-size:1.6rem}
+  #cta{padding:5rem 1.5rem}
+}
+@media(max-width:480px){
+  .hero-title{font-size:1.55rem}
+  .hero-badge{font-size:0.65rem}
+  .worries-grid{grid-template-columns:1fr}
+  .gallery-mosaic{grid-template-columns:1fr 1fr}
+  .overview-table{display:block}
+  .overview-table tr{display:block;margin-bottom:1rem}
+  .overview-table th{display:block;width:auto;padding-bottom:0.2rem}
+  .overview-table td{display:block;padding-top:0}
 }
 </style>
 </head>
@@ -208,7 +253,18 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
     <li><a href="#faq">FAQ</a></li>
     <li><a href="BASE_URL_HERE" class="nav-cta">申し込む</a></li>
   </ul>
+  <button class="nav-hamburger" onclick="toggleMenu(this)" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="#why" onclick="closeMenu()">特徴</a>
+  <a href="#days" onclick="closeMenu()">3日間</a>
+  <a href="#gallery" onclick="closeMenu()">ギャラリー</a>
+  <a href="#overview" onclick="closeMenu()">概要</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="BASE_URL_HERE" class="nav-cta" onclick="closeMenu()">申し込む</a>
+</div>
 
 <!-- ① ヒーロー写真（全幅） -->
 <section id="hero">
@@ -622,6 +678,8 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
 <script>
 function switchDay(day){document.querySelectorAll('.day-tab').forEach((t,i)=>t.classList.toggle('active',i+1===day));document.querySelectorAll('.day-content').forEach((c,i)=>c.classList.toggle('active',i+1===day));}
 function toggleFAQ(el){el.parentElement.classList.toggle('open');}
+function toggleMenu(btn){btn.classList.toggle('open');document.getElementById('nav-mobile').classList.toggle('open');btn.setAttribute('aria-label',btn.classList.contains('open')?'メニューを閉じる':'メニューを開く');}
+function closeMenu(){document.querySelector('.nav-hamburger').classList.remove('open');document.getElementById('nav-mobile').classList.remove('open');}
 const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target);}});},{threshold:0.1});
 document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
 </script>
