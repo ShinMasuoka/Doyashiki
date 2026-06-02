@@ -184,6 +184,10 @@ section{padding:6rem 0}
 footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;padding:2rem;font-size:0.78rem}
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
 .fade-in.visible{opacity:1;transform:translateY(0)}
+.eyebrow-icon{display:inline-block;vertical-align:middle;margin-right:0.45rem;position:relative;top:-1px}
+#why,#growth,#days,#testimonials{position:relative;overflow:hidden}
+.deco-bg{position:absolute;pointer-events:none;z-index:0}
+#why .container,#growth .container,#days .container,#testimonials .container{position:relative;z-index:1}
 .curve-sep{display:block;overflow:hidden;line-height:0;font-size:0;margin:0;padding:0}
 .curve-sep svg{display:block;width:100%;height:64px}
 @media(max-width:768px){.curve-sep svg{height:36px}}
@@ -323,7 +327,7 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
 <!-- WORRIES -->
 <section id="worries">
   <div class="container">
-    <div class="section-eyebrow">PARENT'S CONCERNS</div>
+    <div class="section-eyebrow"><svg class="eyebrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11,21 C5,17 3,12 4,7 C5,3 9,2 12,2 C15,2 19,3 20,8 C21,13 18,17 12,21"/><path d="M12,2 C11.5,8 11,14 11,21"/></svg>PARENT'S CONCERNS</div>
     <h2 class="section-title fade-in">こんなお悩みありませんか？</h2>
     <div class="worries-grid">
       <div class="worry-card fade-in"><div class="worry-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div><p class="worry-text">夏休み、ゲームやスマホばかりで心配</p></div>
@@ -340,8 +344,9 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
 
 <!-- WHY — ⑤⑥⑦⑧ 写真付きカード -->
 <section id="why">
+  <svg class="deco-bg" style="width:280px;height:280px;top:-40px;right:-40px;opacity:0.06" viewBox="0 0 24 24" fill="none" stroke="var(--gm)" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11,21 C5,17 3,12 4,7 C5,3 9,2 12,2 C15,2 19,3 20,8 C21,13 18,17 12,21"/><path d="M12,2 C11.5,8 11,14 11,21"/></svg>
   <div class="container">
-    <div class="section-eyebrow">WHY DOSYASHIKI</div>
+    <div class="section-eyebrow"><svg class="eyebrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11,21 C5,17 3,12 4,7 C5,3 9,2 12,2 C15,2 19,3 20,8 C21,13 18,17 12,21"/><path d="M12,2 C11.5,8 11,14 11,21"/></svg>WHY DOSYASHIKI</div>
     <h2 class="section-title fade-in">なぜ夏合宿inにしあわくらなのか？</h2>
     <div class="why-grid">
       <div class="why-card fade-in">
@@ -387,8 +392,9 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
 
 <!-- DAYS — DAYごとにメイン1枚＋サブ2枚 -->
 <section id="days">
+  <svg class="deco-bg" style="width:340px;height:200px;bottom:-20px;left:-30px;opacity:0.07" viewBox="0 0 32 20" fill="none" stroke="white" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1,18 L9,4 L16,13 L21,7 L31,18"/><path d="M0,14 Q8,10 16,14 Q24,18 32,14"/></svg>
   <div class="container">
-    <div class="section-eyebrow">3 DAYS PROGRAM</div>
+    <div class="section-eyebrow"><svg class="eyebrow-icon" width="22" height="14" viewBox="0 0 32 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1,18 L9,4 L16,13 L21,7 L31,18"/></svg>3 DAYS PROGRAM</div>
     <h2 class="section-title fade-in">子どもたちの3日間</h2>
     <div class="days-tabs fade-in">
       <button class="day-tab active" onclick="switchDay(1)">DAY 1</button>
@@ -469,7 +475,7 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
 <!-- GALLERY — モザイクグリッド（⑱〜㉕） -->
 <section id="gallery">
   <div class="gallery-header">
-    <div class="section-eyebrow">EXPERIENCE GALLERY</div>
+    <div class="section-eyebrow"><svg class="eyebrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12,2 L13.2,10.8 L22,12 L13.2,13.2 L12,22 L10.8,13.2 L2,12 L10.8,10.8 Z"/></svg>EXPERIENCE GALLERY</div>
     <h2 class="section-title fade-in">体験ギャラリー</h2>
   </div>
   <div class="gallery-mosaic fade-in">
@@ -530,6 +536,7 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
 
 <!-- GROWTH — 写真付き -->
 <section id="growth">
+  <svg class="deco-bg" style="width:260px;height:260px;bottom:-50px;right:-30px;opacity:0.07" viewBox="0 0 24 24" fill="none" stroke="var(--gm)" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12,21 L12,10"/><path d="M12,16 C10,14 7,11 5,8 C8,7 11,9 12,13"/><path d="M12,13 C14,11 17,8 19,6 C16,5 13,7 12,10"/></svg>
   <div class="container">
     <div class="growth-with-photo">
       <div class="growth-photo">
@@ -538,7 +545,7 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
         <span>写真㉖（縦長）</span>
       </div>
       <div>
-        <div class="section-eyebrow">WHAT CHILDREN GAIN</div>
+        <div class="section-eyebrow"><svg class="eyebrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12,21 L12,10"/><path d="M12,16 C10,14 7,11 5,8 C8,7 11,9 12,13"/><path d="M12,13 C14,11 17,8 19,6 C16,5 13,7 12,10"/></svg>WHAT CHILDREN GAIN</div>
         <h2 class="section-title fade-in">子どもたちは何を得るの？</h2>
         <div class="growth-flow fade-in">
           <div class="growth-step"><div class="growth-step-num">STEP 1</div><div class="growth-step-title">挑戦する力</div></div>
@@ -575,8 +582,9 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
 
 <!-- TESTIMONIALS -->
 <section id="testimonials">
+  <svg class="deco-bg" style="width:320px;height:120px;top:40px;right:-20px;opacity:0.05" viewBox="0 0 36 18" fill="none" stroke="var(--gm)" stroke-width="0.6" stroke-linecap="round" aria-hidden="true"><path d="M2,9 C7,3 12,15 17,9 C22,3 27,15 32,9"/><path d="M2,14 C7,8 12,20 17,14 C22,8 27,20 32,14"/></svg>
   <div class="container">
-    <div class="section-eyebrow">PARENT REVIEWS</div>
+    <div class="section-eyebrow"><svg class="eyebrow-icon" width="20" height="12" viewBox="0 0 36 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2,9 C7,3 12,15 17,9 C22,3 27,15 32,9"/></svg>PARENT REVIEWS</div>
     <h2 class="section-title fade-in">保護者の声</h2>
     <div class="testimonials-grid">
       <div class="testimonial-card fade-in"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">「帰宅してすぐ、自分から晩ご飯の準備を手伝ってくれました。キャンプで料理を覚えてきたのが嬉しかったみたいで、その日から少し変わりました。」</p><div class="testimonial-author"><div class="testimonial-avatar">田</div><div><div class="testimonial-name">田中さんのお母さん</div><div class="testimonial-role">小学4年生の保護者</div></div></div></div>
@@ -594,7 +602,7 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
 <!-- STAFF -->
 <section id="staff">
   <div class="container">
-    <div class="section-eyebrow">OUR TEAM</div>
+    <div class="section-eyebrow"><svg class="eyebrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11,21 C5,17 3,12 4,7 C5,3 9,2 12,2 C15,2 19,3 20,8 C21,13 18,17 12,21"/><path d="M12,2 C11.5,8 11,14 11,21"/></svg>OUR TEAM</div>
     <h2 class="section-title fade-in">スタッフ紹介</h2>
     <div class="staff-grid">
       <div class="staff-card fade-in">
@@ -636,7 +644,7 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
         <span>写真㉟（安全な環境）</span>
       </div>
       <div>
-        <div class="section-eyebrow">SAFETY &amp; SECURITY</div>
+        <div class="section-eyebrow"><svg class="eyebrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12,21 L12,10"/><path d="M12,16 C10,14 7,11 5,8 C8,7 11,9 12,13"/><path d="M12,13 C14,11 17,8 19,6 C16,5 13,7 12,10"/></svg>SAFETY &amp; SECURITY</div>
         <h2 class="section-title fade-in" style="color:var(--w);">安心して送り出せる理由</h2>
         <div class="safety-list">
           <div class="safety-item fade-in"><div class="safety-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div><div><div class="safety-label">少人数制（各回定員8名）</div><div class="safety-desc">少人数だからこそ、一人ひとりの様子をスタッフがしっかりと見守ります。</div></div></div>
@@ -655,7 +663,7 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
 <!-- OVERVIEW -->
 <section id="overview">
   <div class="container">
-    <div class="section-eyebrow">CAMP DETAILS</div>
+    <div class="section-eyebrow"><svg class="eyebrow-icon" width="22" height="14" viewBox="0 0 32 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1,18 L9,4 L16,13 L21,7 L31,18"/></svg>CAMP DETAILS</div>
     <h2 class="section-title fade-in">開催概要</h2>
     <div class="fade-in" style="background:var(--cream);border-radius:16px;padding:2.5rem;border:1px solid rgba(45,106,79,0.12);">
       <table class="overview-table">
@@ -680,7 +688,7 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
 <!-- FAQ -->
 <section id="faq">
   <div class="container" style="max-width:720px">
-    <div class="section-eyebrow">FAQ</div>
+    <div class="section-eyebrow"><svg class="eyebrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11,21 C5,17 3,12 4,7 C5,3 9,2 12,2 C15,2 19,3 20,8 C21,13 18,17 12,21"/><path d="M12,2 C11.5,8 11,14 11,21"/></svg>FAQ</div>
     <h2 class="section-title fade-in">よくある質問</h2>
     <div class="faq-list fade-in">
       <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)">参加費に含まれるものを教えてください<svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></div><div class="faq-answer">宿泊費・6食分の食費・体験活動費がすべて含まれます。現地集合後は追加の現金は不要です。</div></div>
