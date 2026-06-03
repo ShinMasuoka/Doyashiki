@@ -59,8 +59,8 @@ section{padding:6rem 0}
 .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
 .why-card{background:var(--w);border-radius:16px;overflow:hidden;border:1px solid rgba(45,106,79,0.1);transition:transform 0.2s,box-shadow 0.2s}
 .why-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(45,106,79,0.1)}
-.why-card-photo{height:200px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;font-size:0.75rem}
-.why-card-photo img{width:100%;height:100%;object-fit:cover}
+.why-card-photo{position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;font-size:0.75rem;min-height:120px}
+.why-card-photo img{width:100%;height:auto;display:block}
 .why-card-photo svg{opacity:0.5}
 .why-card-photo .photo-tag{position:absolute;top:0.8rem;left:0.8rem;background:var(--gm);color:var(--w);font-size:0.7rem;font-weight:700;padding:0.2rem 0.7rem;border-radius:50px}
 .why-card-body{padding:1.5rem}
@@ -81,6 +81,7 @@ section{padding:6rem 0}
 .day-photo-sub{aspect-ratio:4/3;background:rgba(255,255,255,0.07);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.4rem;color:rgba(255,255,255,0.25);font-size:0.72rem;border:1.5px dashed rgba(255,255,255,0.1);overflow:hidden}
 .day-photo-sub img{width:100%;height:100%;object-fit:cover}
 .day-photo-sub svg{width:24px;height:24px}
+.day-img-full{display:block;width:100%;border-radius:16px}
 .day-theme{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(82,183,136,0.2);color:var(--gl);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;padding:0.35rem 0.9rem;border-radius:50px;margin-bottom:1.2rem}
 .day-title{font-family:"RocknRoll One",sans-serif;font-size:1.8rem;color:var(--w);margin-bottom:1rem;line-height:1.4}
 .day-desc{font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:1.5rem}
@@ -238,6 +239,8 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
   #cta{padding:5rem 1.5rem}
   .staff-photo{height:260px;overflow:hidden}
   .staff-photo img{height:100%;object-fit:cover}
+  .why-card-photo{height:200px;overflow:hidden}
+  .why-card-photo img{height:100%;object-fit:cover}
 }
 @media(max-width:480px){
   .hero-title{font-size:1.55rem}
@@ -345,7 +348,7 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
 <section id="why">
   <svg class="deco-bg" style="width:280px;height:280px;top:-40px;right:-40px;opacity:0.06" viewBox="0 0 24 24" fill="none" stroke="var(--gm)" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11,21 C5,17 3,12 4,7 C5,3 9,2 12,2 C15,2 19,3 20,8 C21,13 18,17 12,21"/><path d="M12,2 C11.5,8 11,14 11,21"/></svg>
   <div class="container">
-    <h2 class="section-title fade-in"><svg class="title-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11,21 C5,17 3,12 4,7 C5,3 9,2 12,2 C15,2 19,3 20,8 C21,13 18,17 12,21"/><path d="M12,2 C11.5,8 11,14 11,21"/></svg>なぜ夏合宿inにしあわくらなのか？</h2>
+    <h2 class="section-title fade-in"><img src="/icons/rice_bowl.png" class="title-icon" width="28" height="28" alt="">夏合宿inにしあわくらの特徴</h2>
     <div class="why-grid">
       <div class="why-card fade-in">
         <div class="why-card-photo">
@@ -397,69 +400,13 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
       <button class="day-tab" onclick="switchDay(3)">DAY 3</button>
     </div>
     <div class="day-content active" id="day-1">
-      <div class="day-layout">
-        <div class="day-photos">
-          <div class="day-photo-main">
-            <!-- <img src="day1-main.jpg" alt="DAY1"> -->
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.3" width="30" height="30"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg>
-            <span>写真⑨ DAY1メイン</span>
-          </div>
-          <div class="day-photo-sub">
-            <!-- <img src="day1-sub1.jpg" alt=""> -->
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.3" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg>
-            <span>写真⑩</span>
-          </div>
-          <div class="day-photo-sub">
-            <!-- <img src="day1-sub2.jpg" alt=""> -->
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.3" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg>
-            <span>写真⑪</span>
-          </div>
-        </div>
-        <div>
-          <div class="day-theme">出会いの日</div>
-          <h3 class="day-title">知らない仲間と、<br>最初の一歩を踏み出す</h3>
-          <p class="day-desc">はじめましての子どもたち。緊張しながらも、自己紹介や簡単なゲームで少しずつ距離が縮まっていきます。夕方には村を探検し、川で水遊び。夜の焚き火を囲んで「ここでの3日間」が始まります。</p>
-          <div class="day-activities"><span class="activity-tag">自己紹介ゲーム</span><span class="activity-tag">村の探検</span><span class="activity-tag">川遊び</span><span class="activity-tag">夜の焚き火</span></div>
-        </div>
-      </div>
+      <img src="/images/summercamp2026/photo/day1.png" alt="DAY 1" class="day-img-full">
     </div>
     <div class="day-content" id="day-2">
-      <div class="day-layout">
-        <div class="day-photos">
-          <div class="day-photo-main">
-            <!-- <img src="day2-main.jpg" alt="DAY2"> -->
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.3" width="30" height="30"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg>
-            <span>写真⑫ DAY2メイン</span>
-          </div>
-          <div class="day-photo-sub"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.3" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg><span>写真⑬</span></div>
-          <div class="day-photo-sub"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.3" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg><span>写真⑭</span></div>
-        </div>
-        <div>
-          <div class="day-theme">挑戦の日</div>
-          <h3 class="day-title">やったことのないことに、<br>自分から挑んでみる</h3>
-          <p class="day-desc">この日は一番の挑戦デー。森の中を地図を頼りに歩くオリエンテーリング、自分たちで火を起こして料理する体験など。うまくいかなくても大丈夫。仲間と考えて、もう一度やってみる経験を積みます。</p>
-          <div class="day-activities"><span class="activity-tag">森のオリエンテーリング</span><span class="activity-tag">火起こし体験</span><span class="activity-tag">自炊料理</span><span class="activity-tag">星空観察</span></div>
-        </div>
-      </div>
+      <img src="/images/summercamp2026/photo/day2.png" alt="DAY 2" class="day-img-full">
     </div>
     <div class="day-content" id="day-3">
-      <div class="day-layout">
-        <div class="day-photos">
-          <div class="day-photo-main">
-            <!-- <img src="day3-main.jpg" alt="DAY3"> -->
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.3" width="30" height="30"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg>
-            <span>写真⑮ DAY3メイン</span>
-          </div>
-          <div class="day-photo-sub"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.3" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg><span>写真⑯</span></div>
-          <div class="day-photo-sub"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.3" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg><span>写真⑰</span></div>
-        </div>
-        <div>
-          <div class="day-theme">成長の日</div>
-          <h3 class="day-title">「できた」を胸に、<br>家に帰る</h3>
-          <p class="day-desc">最終日は、3日間の振り返り。「怖かったけどやってみた」「失敗したけど諦めなかった」。子どもたちの言葉の中に、確かな成長が見えます。お別れの時間は寂しいけれど、次に会う約束をして解散します。</p>
-          <div class="day-activities"><span class="activity-tag">振り返りワークショップ</span><span class="activity-tag">修了証授与</span><span class="activity-tag">お別れ会</span></div>
-        </div>
-      </div>
+      <img src="/images/summercamp2026/photo/day3.png" alt="DAY 3" class="day-img-full">
     </div>
   </div>
 </section>
