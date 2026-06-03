@@ -133,8 +133,8 @@ section{padding:6rem 0}
 #staff{background:var(--cream)}
 .staff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
 .staff-card{background:var(--w);border-radius:16px;overflow:hidden;border:1px solid rgba(45,106,79,0.1)}
-.staff-photo{height:260px;background:var(--gp);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;color:var(--gm);font-size:0.75rem}
-.staff-photo img{width:100%;height:100%;object-fit:cover}
+.staff-photo{background:var(--gp);position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;color:var(--gm);font-size:0.75rem}
+.staff-photo img{width:100%;height:auto;display:block}
 .staff-photo svg{opacity:0.4}
 .staff-body{padding:1.5rem}
 .staff-name{font-family:"RocknRoll One",sans-serif;font-size:1.15rem;color:var(--gd);margin-bottom:0.2rem}
@@ -234,6 +234,8 @@ footer{background:var(--gd);color:rgba(255,255,255,0.5);text-align:center;paddin
   .overview-table td{font-size:0.82rem}
   .cta-title{font-size:1.6rem}
   #cta{padding:5rem 1.5rem}
+  .staff-photo{height:260px;overflow:hidden}
+  .staff-photo img{height:100%;object-fit:cover}
 }
 @media(max-width:480px){
   .hero-title{font-size:1.55rem}
