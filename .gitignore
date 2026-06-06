@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # 作業メモ
 作業メモ/
+
+# Claude Code ローカル設定
+.claude/settings.local.json
